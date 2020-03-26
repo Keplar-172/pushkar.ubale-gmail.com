@@ -1,0 +1,6 @@
+imports_df = pd.read_csv('./india-trade-data/2018-2010_import.csv')
+imports_df= imports_df.dropna()
+imports_df.head()
+racing_bar_imports=pd.DataFrame()
+racing_bar_imports=imports_df.groupby(['country','year']).sum()
+racing_bar_imports.drop(columns='HSCode')
